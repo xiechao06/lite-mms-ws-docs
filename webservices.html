@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -10,7 +9,7 @@
     
     <title>webservices &mdash; lite-mms 1.1 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -298,9 +297,6 @@
 <li>其次，按工单上一次状态变更的时间由远及近进行排序。</li>
 </ul>
 <p>例如：存在A，B两个待分配工单，这两个工单排产的时间分别是 <em>2012-9-10[10:09:10]</em> 和 <em>2012-9-10[9:50:07]</em> , 那么B要排在A的前面</p>
-<ul class="simple">
-<li>单元测试: <tt class="xref py py-func docutils literal"><span class="pre">portal.manufacture.test_webservices.test_work_command_list()</span></tt></li>
-</ul>
 <div class="section" id="id16">
 <h3>request<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <p><strong>GET /manufacture_ws/work-command-list?department_id=&lt;int&gt;&amp;team_id=&lt;int&gt;&amp;start=&lt;int:0&gt;&amp;cnt=&lt;int:sys.maxint&gt;&amp;status=&lt;int&gt;+</strong></p>
@@ -325,6 +321,8 @@
             <span class="s">&quot;department&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 车间名称</span>
             <span class="s">&quot;handleType&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 处理类型</span>
             <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 工单ID</span>
+            <span class="s">&quot;spec&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 规格</span>
+            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 型号</span>
             <span class="s">&quot;isUrgent&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="o">|</span><span class="mi">0</span><span class="p">,</span> <span class="c"># 是否加急，1加急。</span>
             <span class="s">&quot;lastMod&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># last modified time, seconds since epoch</span>
             <span class="s">&quot;orderID&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 工单ID</span>
