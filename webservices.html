@@ -10,7 +10,7 @@
     
     <title>webservices &mdash; lite-mms 1.1 documentation</title>
     
-    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -31,27 +31,26 @@
     <link rel="prev" title="Welcome to lite-mms-doc’s Documentation" href="index.html" /> 
   </head>
   <body>
-    <div class="header-wrapper">
-      <div class="header">
-        <div class="headertitle"><a
-          href="index.html">lite-mms 1.1 documentation</a></div>
-        <div class="rel">
-          <a href="index.html" title="Welcome to lite-mms-doc’s Documentation"
-             accesskey="P">上一页</a> |
-          <a href="mannual.html" title="简介"
-             accesskey="N">下一页</a> |
-          <a href="py-modindex.html" title="Python Module Index"
-             >模块</a> |
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="总目录"
-             accesskey="I">索引</a>
-        </div>
-       </div>
-    </div>
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >模块</a> |</li>
+        <li class="right" >
+          <a href="mannual.html" title="简介"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to lite-mms-doc’s Documentation"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="index.html">lite-mms 1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-    <div class="content-wrapper">
-      <div class="content">
-        <div class="document">
-            
+    <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body">
@@ -1169,58 +1168,189 @@
           </div>
         </div>
       </div>
-        </div>
-        <div class="sidebar">
-          <h3>內容目录</h3>
-          <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">webservices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mannual.html">简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mannual.html#id2">预设数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mannual.html#id3">名词解释</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mannual.html#id4">卸货流程</a></li>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">webservices</a><ul>
+<li><a class="reference internal" href="#post-auth-login">post-auth-login(客户端登陆接口)</a><ul>
+<li><a class="reference internal" href="#request">request</a></li>
+<li><a class="reference internal" href="#response">response</a></li>
+<li><a class="reference internal" href="#example">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-unload-session-list">get-unload-session-list(获取卸货会话列表)</a><ul>
+<li><a class="reference internal" href="#id3">request</a></li>
+<li><a class="reference internal" href="#id8">response</a></li>
+<li><a class="reference internal" href="#id9">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-harbour-list">get-harbour-list(获取装卸货点列表)</a><ul>
+<li><a class="reference internal" href="#id10">request</a></li>
+<li><a class="reference internal" href="#id11">response</a></li>
+<li><a class="reference internal" href="#id12">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#post-unload-task">post-unload-task(生成卸货任务)</a><ul>
+<li><a class="reference internal" href="#id13">request</a></li>
+<li><a class="reference internal" href="#id14">response</a></li>
+<li><a class="reference internal" href="#id15">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-work-command-list">get-work-command-list(获取工单列表)</a><ul>
+<li><a class="reference internal" href="#id16">request</a></li>
+<li><a class="reference internal" href="#id25">response</a></li>
+<li><a class="reference internal" href="#id28">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-customer-list">get-customer-list(获取客户列表)</a><ul>
+<li><a class="reference internal" href="#id29">request</a></li>
+<li><a class="reference internal" href="#id30">response</a></li>
+<li><a class="reference internal" href="#id31">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-team-list">get-team-list(获取班组列表)</a><ul>
+<li><a class="reference internal" href="#id32">request</a></li>
+<li><a class="reference internal" href="#id33">response</a></li>
+<li><a class="reference internal" href="#id34">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#assign-work-command">assign-work-command(分配工单)</a><ul>
+<li><a class="reference internal" href="#id36">request</a></li>
+<li><a class="reference internal" href="#id37">response</a></li>
+<li><a class="reference internal" href="#id40">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-processed-weight">add-processed-weight(增加工序后重量)</a><ul>
+<li><a class="reference internal" href="#id41">request</a></li>
+<li><a class="reference internal" href="#id42">response</a></li>
+<li><a class="reference internal" href="#id43">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#request-end-work-command">request-end-work-command(请求结束或结转工单)</a><ul>
+<li><a class="reference internal" href="#id44">request</a></li>
+<li><a class="reference internal" href="#id45">response</a></li>
+<li><a class="reference internal" href="#id46">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#refuse-work-command">refuse-work-command(打回工单)</a><ul>
+<li><a class="reference internal" href="#reqeust">reqeust</a></li>
+<li><a class="reference internal" href="#id49">response</a></li>
+<li><a class="reference internal" href="#id50">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#affirm-retrieve-work-command">affirm-retrieve-work-command(确认回收工单)</a><ul>
+<li><a class="reference internal" href="#id51">request</a></li>
+<li><a class="reference internal" href="#id52">response</a></li>
+<li><a class="reference internal" href="#id53">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#refuse-retrieval-work-command">refuse-retrieval-work-command(拒绝回收工单)</a><ul>
+<li><a class="reference internal" href="#id54">request</a></li>
+<li><a class="reference internal" href="#id57">response</a></li>
+<li><a class="reference internal" href="#id58">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-quality-inspection-report">create-quality-inspection-report(生成质检报告)</a><ul>
+<li><a class="reference internal" href="#id59">request</a></li>
+<li><a class="reference internal" href="#id60">response</a></li>
+<li><a class="reference internal" href="#id61">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#update-quality-inspection-report">update-quality-inspection-report(修改质检报告)</a><ul>
+<li><a class="reference internal" href="#id62">request</a></li>
+<li><a class="reference internal" href="#id63">response</a></li>
+<li><a class="reference internal" href="#id64">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#delete-quality-inspection-report">delete-quality-inspection-report(删除质检报告)</a><ul>
+<li><a class="reference internal" href="#id65">request</a></li>
+<li><a class="reference internal" href="#id66">response</a></li>
+<li><a class="reference internal" href="#id67">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-quality-inspection-report-list">get-quality-inspection-report-list(查看质检报告列表)</a><ul>
+<li><a class="reference internal" href="#id68">request</a></li>
+<li><a class="reference internal" href="#id69">response</a></li>
+<li><a class="reference internal" href="#id70">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#submit-quality-inspection">submit-quality-inspection(提交质检单)</a><ul>
+<li><a class="reference internal" href="#id71">request</a></li>
+<li><a class="reference internal" href="#id74">response</a></li>
+<li><a class="reference internal" href="#id75">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-delivery-session-list">get-delivery-session-list(获取发货会话列表)</a><ul>
+<li><a class="reference internal" href="#id76">request</a></li>
+<li><a class="reference internal" href="#id77">response</a></li>
+<li><a class="reference internal" href="#id78">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-delivery-session">get-delivery-session(获取发货会话详情)</a><ul>
+<li><a class="reference internal" href="#id79">request</a></li>
+<li><a class="reference internal" href="#id80">response</a></li>
+<li><a class="reference internal" href="#id81">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#post-delivery-task">post-delivery-task(创建发货任务)</a><ul>
+<li><a class="reference internal" href="#id82">request</a></li>
+<li><a class="reference internal" href="#id85">response</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-          <h3 style="margin-top: 1.5em;">搜索</h3>
-          <form class="search" action="search.html" method="get">
-            <input type="text" name="q" />
-            <input type="submit" value="搜索" />
-            <input type="hidden" name="check_keywords" value="yes" />
-            <input type="hidden" name="area" value="default" />
-          </form>
-          <p class="searchtip" style="font-size: 90%">
-            输入相关的模块，术语，类或者函数名称进行搜索
-          </p>
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="index.html"
+                        title="上一章">Welcome to lite-mms-doc&#8217;s Documentation</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="mannual.html"
+                        title="下一章">简介</a></p>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/webservices.txt"
+           rel="nofollow">显示源代码</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的模块，术语，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
-        <div class="clearer"></div>
       </div>
+      <div class="clearer"></div>
     </div>
-
-    <div class="footer-wrapper">
-      <div class="footer">
-        <div class="left">
-          <a href="index.html" title="Welcome to lite-mms-doc’s Documentation"
-             >上一页</a> |
-          <a href="mannual.html" title="简介"
-             >下一页</a> |
-          <a href="py-modindex.html" title="Python Module Index"
-             >模块</a> |
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="总目录"
-             >索引</a>
-            <br/>
-            <a href="_sources/webservices.txt"
-               rel="nofollow">显示源代码</a>
-        </div>
-
-        <div class="right">
-          
+             >索引</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >模块</a> |</li>
+        <li class="right" >
+          <a href="mannual.html" title="简介"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to lite-mms-doc’s Documentation"
+             >上一页</a> |</li>
+        <li><a href="index.html">lite-mms 1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
     <div class="footer">
         &copy; 版权所有 2012, xiechao.
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
-        </div>
-        <div class="clearer"></div>
-      </div>
-    </div>
-
   </body>
 </html>
