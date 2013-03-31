@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,7 +10,7 @@
     
     <title>status of work command &mdash; lite-mms 1.1 documentation</title>
     
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -46,9 +47,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-lite_mms.constants.work_command">
-<span id="status-of-work-command"></span><h1>status of work command<a class="headerlink" href="#module-lite_mms.constants.work_command" title="永久链接至标题">¶</a></h1>
-<dl class="data">
+  <div class="section" id="status-of-work-command">
+<h1>status of work command<a class="headerlink" href="#status-of-work-command" title="永久链接至标题">¶</a></h1>
+<span class="target" id="module-lite_mms.constants.work_command"></span><dl class="data">
 <dt id="lite_mms.constants.work_command.STATUS_DISPATCHING">
 <tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">STATUS_DISPATCHING</tt><em class="property"> = 1</em><a class="headerlink" href="#lite_mms.constants.work_command.STATUS_DISPATCHING" title="永久链接至目标">¶</a></dt>
 <dd><p>待排产</p>
@@ -73,18 +74,6 @@
 </dd></dl>
 
 <dl class="data">
-<dt id="lite_mms.constants.work_command.STATUS_AFFIRMING_END">
-<tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">STATUS_AFFIRMING_END</tt><em class="property"> = 5</em><a class="headerlink" href="#lite_mms.constants.work_command.STATUS_AFFIRMING_END" title="永久链接至目标">¶</a></dt>
-<dd><p>待确认结束</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="lite_mms.constants.work_command.STATUS_AFFIRMING_CARRY_FORWARD">
-<tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">STATUS_AFFIRMING_CARRY_FORWARD</tt><em class="property"> = 6</em><a class="headerlink" href="#lite_mms.constants.work_command.STATUS_AFFIRMING_CARRY_FORWARD" title="永久链接至目标">¶</a></dt>
-<dd><p>待确认结转</p>
-</dd></dl>
-
-<dl class="data">
 <dt id="lite_mms.constants.work_command.STATUS_QUALITY_INSPECTING">
 <tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">STATUS_QUALITY_INSPECTING</tt><em class="property"> = 7</em><a class="headerlink" href="#lite_mms.constants.work_command.STATUS_QUALITY_INSPECTING" title="永久链接至目标">¶</a></dt>
 <dd><p>待质检</p>
@@ -100,12 +89,6 @@
 <dt id="lite_mms.constants.work_command.STATUS_FINISHED">
 <tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">STATUS_FINISHED</tt><em class="property"> = 9</em><a class="headerlink" href="#lite_mms.constants.work_command.STATUS_FINISHED" title="永久链接至目标">¶</a></dt>
 <dd><p>已经结束</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="lite_mms.constants.work_command.STATUS_AFTER_CARRY_FORWARD">
-<tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">STATUS_AFTER_CARRY_FORWARD</tt><em class="property"> = 10</em><a class="headerlink" href="#lite_mms.constants.work_command.STATUS_AFTER_CARRY_FORWARD" title="永久链接至目标">¶</a></dt>
-<dd><p>结转后剩余</p>
 </dd></dl>
 
 </div>
@@ -139,18 +122,6 @@
 </dd></dl>
 
 <dl class="data">
-<dt id="lite_mms.constants.work_command.ACT_AFFIRM_END">
-<tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">ACT_AFFIRM_END</tt><em class="property"> = 207</em><a class="headerlink" href="#lite_mms.constants.work_command.ACT_AFFIRM_END" title="永久链接至目标">¶</a></dt>
-<dd><p>(车间主任)确认工单结束</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="lite_mms.constants.work_command.ACT_AFFIRM_CARRY_FORWARD">
-<tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">ACT_AFFIRM_CARRY_FORWARD</tt><em class="property"> = 208</em><a class="headerlink" href="#lite_mms.constants.work_command.ACT_AFFIRM_CARRY_FORWARD" title="永久链接至目标">¶</a></dt>
-<dd><p>(车间主任)确认工单结转</p>
-</dd></dl>
-
-<dl class="data">
 <dt id="lite_mms.constants.work_command.ACT_REFUSE">
 <tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">ACT_REFUSE</tt><em class="property"> = 209</em><a class="headerlink" href="#lite_mms.constants.work_command.ACT_REFUSE" title="永久链接至目标">¶</a></dt>
 <dd><p>(车间主任)打回工单</p>
@@ -178,6 +149,18 @@
 <dt id="lite_mms.constants.work_command.ACT_REFUSE_RETRIEVAL">
 <tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">ACT_REFUSE_RETRIEVAL</tt><em class="property"> = 213</em><a class="headerlink" href="#lite_mms.constants.work_command.ACT_REFUSE_RETRIEVAL" title="永久链接至目标">¶</a></dt>
 <dd><p>(车间主任)拒绝回收</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lite_mms.constants.work_command.ACT_RETRIVE_QI">
+<tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">ACT_RETRIVE_QI</tt><em class="property"> = 214</em><a class="headerlink" href="#lite_mms.constants.work_command.ACT_RETRIVE_QI" title="永久链接至目标">¶</a></dt>
+<dd><p>(质检员)取消质检报告</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lite_mms.constants.work_command.ACT_QUICK_CARRY_FORWARD">
+<tt class="descclassname">lite_mms.constants.work_command.</tt><tt class="descname">ACT_QUICK_CARRY_FORWARD</tt><em class="property"> = 215</em><a class="headerlink" href="#lite_mms.constants.work_command.ACT_QUICK_CARRY_FORWARD" title="永久链接至目标">¶</a></dt>
+<dd><p>(班组长)快速结转</p>
 </dd></dl>
 
 </div>

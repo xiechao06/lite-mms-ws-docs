@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,7 +10,7 @@
     
     <title>webservices &mdash; lite-mms 1.1 documentation</title>
     
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -297,6 +298,9 @@
 <li>其次，按工单上一次状态变更的时间由远及近进行排序。</li>
 </ul>
 <p>例如：存在A，B两个待分配工单，这两个工单排产的时间分别是 <em>2012-9-10[10:09:10]</em> 和 <em>2012-9-10[9:50:07]</em> , 那么B要排在A的前面</p>
+<ul class="simple">
+<li>单元测试: <tt class="xref py py-func docutils literal"><span class="pre">portal.manufacture.test_webservices.test_work_command_list()</span></tt></li>
+</ul>
 <div class="section" id="id16">
 <h3>request<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <p><strong>GET /manufacture_ws/work-command-list?department_id=&lt;int&gt;&amp;team_id=&lt;int&gt;&amp;start=&lt;int:0&gt;&amp;cnt=&lt;int:sys.maxint&gt;&amp;status=&lt;int&gt;+</strong></p>
@@ -318,14 +322,17 @@
     <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s">&quot;customerName&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 客户名称</span>
-            <span class="s">&quot;department&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 车间名称</span>
+            <span class="s">&quot;department&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 车间ID</span>
+                <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 车间名称</span>
+            <span class="p">}</span>
             <span class="s">&quot;handleType&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 处理类型</span>
             <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 工单ID</span>
-            <span class="s">&quot;spec&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 规格</span>
-            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 型号</span>
             <span class="s">&quot;isUrgent&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="o">|</span><span class="mi">0</span><span class="p">,</span> <span class="c"># 是否加急，1加急。</span>
             <span class="s">&quot;lastMod&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># last modified time, seconds since epoch</span>
-            <span class="s">&quot;orderID&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 工单ID</span>
+            <span class="s">&quot;orderID&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 订单ID</span>
+            <span class="s">&quot;orderNum&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">str</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 订单号</span>
+            <span class="s">&quot;orderCreateTime&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 订单创建时间，seconds since epoch</span>
             <span class="s">&quot;orderType&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 工单类型</span>
             <span class="s">&quot;orgWeight&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 工序前重量 , 需要说明的是，若工单类型为瑞格或者紧固件，那么这个值只有参考意义。</span>
             <span class="s">&quot;orgWeight&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 工序前重量</span>
@@ -337,7 +344,10 @@
             <span class="s">&quot;productName&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 产品名称</span>
             <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 状态</span>
             <span class="s">&quot;subOrderId&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 子订单ID</span>
-            <span class="s">&quot;team&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 组名称</span>
+            <span class="s">&quot;team&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nb">id</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 班组ID</span>
+                <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 组名称</span>
+            <span class="p">}</span>
             <span class="s">&quot;technicalRequirements&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 技术要求，可为空</span>
             <span class="s">&quot;rejected&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 是否退货</span>
         <span class="p">}</span>
@@ -384,9 +394,15 @@
             <span class="s">&quot;processedWeight&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s">&quot;customerName&quot;</span><span class="p">:</span> <span class="s">&quot;赛瑞&quot;</span><span class="p">,</span>
             <span class="s">&quot;orgCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="s">&quot;team&quot;</span><span class="p">:</span> <span class="s">&quot;1号班组&quot;</span><span class="p">,</span>
+            <span class="s">&quot;team&quot;</span><span class="p">:</span>  <span class="p">{</span>
+                     <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;1号班组&quot;</span><span class="p">,</span>
+             <span class="p">}</span>
             <span class="s">&quot;productName&quot;</span><span class="p">:</span> <span class="s">&quot;workpiece&quot;</span><span class="p">,</span>
-            <span class="s">&quot;department&quot;</span><span class="p">:</span> <span class="s">&quot;一号车间&quot;</span><span class="p">,</span>
+            <span class="s">&quot;department&quot;</span><span class="p">:</span>  <span class="p">{</span>
+                     <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;一号车间&quot;</span><span class="p">,</span>
+             <span class="p">}</span>
             <span class="s">&quot;subOrderId&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
             <span class="s">&quot;technicalRequirements&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
             <span class="s">&quot;lastMod&quot;</span><span class="p">:</span> <span class="mi">1349851179</span><span class="p">,</span>
@@ -446,7 +462,7 @@
 <h3>request<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h3>
 <p><strong>GET /manufacture_ws/team-list?department_id=&lt;int&gt;</strong></p>
 <ul class="simple">
-<li>department_id - 车间ID</li>
+<li>* department_id - 车间ID</li>
 </ul>
 </div>
 <div class="section" id="id33">
@@ -523,7 +539,10 @@
 </ul>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
     <span class="s">&quot;customerName&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 客户名称</span>
-    <span class="s">&quot;department&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 车间名称</span>
+    <span class="s">&quot;department&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 车间ID</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 车间名称</span>
+    <span class="p">}</span>
     <span class="s">&quot;handleType&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 处理类型</span>
     <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 工单ID</span>
     <span class="s">&quot;isUrgent&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="o">|</span><span class="mi">0</span><span class="p">,</span> <span class="c"># 是否加急，1加急。</span>
@@ -540,7 +559,10 @@
     <span class="s">&quot;productName&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 产品名称</span>
     <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 状态</span>
     <span class="s">&quot;subOrderId&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 子订单ID</span>
-    <span class="s">&quot;team&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 组名称</span>
+    <span class="s">&quot;team&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 班组ID</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 组名称</span>
+    <span class="p">}</span>
     <span class="s">&quot;technicalRequirements&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 技术要求，可为空</span>
     <span class="s">&quot;unit&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 单位</span>
     <span class="s">&quot;rejected&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># 是否退货</span>
@@ -579,7 +601,14 @@
     "orgCount": 0,
     "team": "1号班组",
     "productName": "workpiece",
-    "department": "一号车间",
+    "department":  {
+           "id": 1,
+           "name": "一号车间",
+   }
+   "team": {
+           "id": 1,
+           "name": "一号班组",
+   }
     "subOrderId": 1,
     "technicalRequirements": "",
     "lastMod": 1349851179,
@@ -1160,6 +1189,66 @@
 </div>
 </div>
 </div>
+<div class="section" id="retrive-quality-inspection">
+<h2>retrive-quality-inspection(打回质检单)<a class="headerlink" href="#retrive-quality-inspection" title="永久链接至标题">¶</a></h2>
+<p>前一天提交的或者生成的工单、仓单已经排产或者发货的都不能打回质检单</p>
+<div class="section" id="id86">
+<h3>request<a class="headerlink" href="#id86" title="永久链接至标题">¶</a></h3>
+<p><strong>PUT /manufacture_ws/work-command?work_command_id=&lt;int&gt;&amp;actor_id=&lt;int&gt;&amp;action=214</strong></p>
+<ul class="simple">
+<li>work_command_id - 工单id</li>
+<li>actor_id - 发起人id，这里为质检员</li>
+<li>action - 见 <a class="reference internal" href="constants/work_command.html#module-lite_mms.constants.work_command" title="lite_mms.constants.work_command"><tt class="xref py py-mod docutils literal"><span class="pre">lite_mms.constants.work_command</span></tt></a> 中对各种工单操作的说明</li>
+</ul>
+</div>
+<div class="section" id="id87">
+<h3>response<a class="headerlink" href="#id87" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p class="first">200 - 成功</p>
+<blockquote>
+<div><p>返回数据请参考 <a class="reference internal" href="#assign-work-command"><em>assign-work-command(分配工单)</em></a>, 即处于结束状态的原工单</p>
+</div></blockquote>
+</li>
+<li><p class="first">403 - 失败</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id88">
+<h3>example<a class="headerlink" href="#id88" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div>请参考 <a class="reference internal" href="#assign-work-command"><em>assign-work-command(分配工单)</em></a></div></blockquote>
+</div>
+</div>
+<div class="section" id="quick-carry-forward">
+<h2>quick-carry-forward(快速结转)<a class="headerlink" href="#quick-carry-forward" title="永久链接至标题">¶</a></h2>
+<p>班组长可以将工单快速结转，使工单完成的部分先质检剩下的继续做</p>
+<div class="section" id="id89">
+<h3>request<a class="headerlink" href="#id89" title="永久链接至标题">¶</a></h3>
+<p><strong>PUT /manufacture_ws/work-command?work_command_id=&lt;int&gt;&amp;actor_id=&lt;int&gt;&amp;action=215</strong></p>
+<ul class="simple">
+<li>work_command_id - 工单id</li>
+<li>actor_id - 发起人id，这里为质检员</li>
+<li>action - 见 <a class="reference internal" href="constants/work_command.html#module-lite_mms.constants.work_command" title="lite_mms.constants.work_command"><tt class="xref py py-mod docutils literal"><span class="pre">lite_mms.constants.work_command</span></tt></a> 中对各种工单操作的说明</li>
+</ul>
+</div>
+<div class="section" id="id90">
+<h3>response<a class="headerlink" href="#id90" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p class="first">200 - 成功</p>
+<blockquote>
+<div><p>返回数据请参考 <a class="reference internal" href="#assign-work-command"><em>assign-work-command(分配工单)</em></a>, 即处于结束状态的原工单</p>
+</div></blockquote>
+</li>
+<li><p class="first">403 - 失败</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id91">
+<h3>example<a class="headerlink" href="#id91" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div>请参考 <a class="reference internal" href="#assign-work-command"><em>assign-work-command(分配工单)</em></a></div></blockquote>
+</div>
+</div>
 </div>
 
 
@@ -1294,6 +1383,18 @@
 <li><a class="reference internal" href="#post-delivery-task">post-delivery-task(创建发货任务)</a><ul>
 <li><a class="reference internal" href="#id82">request</a></li>
 <li><a class="reference internal" href="#id85">response</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#retrive-quality-inspection">retrive-quality-inspection(打回质检单)</a><ul>
+<li><a class="reference internal" href="#id86">request</a></li>
+<li><a class="reference internal" href="#id87">response</a></li>
+<li><a class="reference internal" href="#id88">example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-carry-forward">quick-carry-forward(快速结转)</a><ul>
+<li><a class="reference internal" href="#id89">request</a></li>
+<li><a class="reference internal" href="#id90">response</a></li>
+<li><a class="reference internal" href="#id91">example</a></li>
 </ul>
 </li>
 </ul>
